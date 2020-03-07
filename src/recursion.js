@@ -19,10 +19,6 @@ var factorial = function(n) {
 // 2. Compute the sum of an array of integers.
 // sum([1,2,3,4,5,6]); // 21
 var sum = function(array) {
-  if (array.length === 0) {
-    return 0;
-  }
-  
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
@@ -160,15 +156,6 @@ var replaceKeysInObj = function(obj, oldKey, newKey) {
 // fibonacci(5); // [0,1,1,2,3,5]
 // Note: The 0 is not counted.
 var fibonacci = function(n) {
-  // base case
-  // doesn't work
-  if (n < 1) {
-    return null;
-  }
-  if (n === 1) {
-    return n;
-  }
-  return fibonacci(n - 2) + fibonacci(n - 1);
 };
 
 // 26. Return the Fibonacci number located at index n of the Fibonacci sequence.
