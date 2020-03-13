@@ -52,13 +52,31 @@ var isEven = function(n) {
   if (n === 1) {
     return false;
   }
-  return isEven(n - 2);  
+  return isEven(n - 2);
 };
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+  // input: positive or negative integer
+  // output: integer, positive or negative
+  // base cases:
+  // if n is 1 or -1 or 0, return 0
+  // if n > 0
+    // recursive case:
+    // return n - 1 + sumBelow(n-1)
+  // if n < 0
+    // recursive case:
+    // return n + 1 + sumBelow(n+1)
+  if (n === 0 || n === -1 || n === 1) {
+    return 0;
+  }
+  if (n < 0) {
+    return n + 1 + sumBelow(n + 1);
+  } else {
+    return n - 1 + sumBelow(n - 1);
+  }
 };
 
 // 6. Get the integers within a range (x, y).
@@ -189,7 +207,7 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
-  // return (n < 1) ? null 
+  // return (n < 1) ? null
   // : (n === 0) ? n
   // : (n === 1) ? n
   // : nthFibo(n - 2) + nthFibo(n - 1);
