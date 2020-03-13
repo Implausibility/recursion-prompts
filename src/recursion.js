@@ -150,16 +150,6 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
-  // let result = 1
-  // while (result < n) {
-  //   result = result * 2;
-  // }
-  // if (result === n) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-
   if (n === 1) {
     return true;
   }
@@ -174,6 +164,27 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
+  // input: string
+  // final output: reversed string
+
+  // split string into array
+  // initialize reversedString
+  // if the input string list's length is 0
+    // return list;
+  // if input string list's length > 0
+    // pop from string, push to reversedString
+    // return reversedString.concat(reverse(stringList));
+  let list = string.split('');
+  let reversedString = [];
+  if (list.length === 0) {
+    return '';
+  }
+  if (list.length > 0) {
+    reversedString.push(list.pop());
+    let newInput = list.join('');
+    reversedString.push(reverse(newInput)); // reversedString = ['c'].concat(reverse('ab')), reversedString = ['b'].concat(reverse('a')), reversedString = ['a'].concat(reverse(''))
+    return reversedString.join('');
+  }
 };
 
 // 10. Write a function that determines if a string is a palindrome.
