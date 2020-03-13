@@ -82,6 +82,35 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+  // input: two integers, + or -
+  // output: array beginning with x and ending with y
+  // if x - y = negative, then sign = 1
+  // if x - y = positive, then sign = -1
+  // initialize array
+  // base case:
+  // if x === y
+    // return array
+  // if x + sign  === y
+    // unshift y
+    // unshift x
+    // return array
+  // recursive case:
+  // unshift x into result from function call on x + sign
+  // return array
+  const rangeResult = [];
+  if (x === y) {
+    return rangeResult;
+  }
+  const operator = ((x - y) < 0) ? 1 : -1;
+  if (x + operator === y || x === y) {
+    return rangeResult;
+  }
+  if (x + (2 * operator) === y) {
+    rangeResult.unshift(x + operator);
+    return rangeResult;
+  }
+  rangeResult.unshift(x + operator);
+  return rangeResult.concat(range(x + operator, y));
 };
 
 // 7. Compute the exponent of a number.
