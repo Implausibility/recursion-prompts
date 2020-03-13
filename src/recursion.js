@@ -82,21 +82,6 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-  // input: two integers, + or -
-  // output: array beginning with x and ending with y
-  // if x - y = negative, then sign = 1
-  // if x - y = positive, then sign = -1
-  // initialize array
-  // base case:
-  // if x === y
-    // return array
-  // if x + sign  === y
-    // unshift y
-    // unshift x
-    // return array
-  // recursive case:
-  // unshift x into result from function call on x + sign
-  // return array
   const rangeResult = [];
   if (x === y) {
     return rangeResult;
@@ -139,10 +124,6 @@ var exponent = function(base, exp) {
     let result = exponent(base, exp / 2);
     return result * result;
   }
-  // positive exp:
-    // odd exp: base ^ exp = base ^ (exp - 1) * base
-    // even exp: base ^ exp = base ^ exp/2 * base ^ exp/2
-    //
 };
 
 // 8. Determine if a number is a power of two.
@@ -164,16 +145,6 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
-  // input: string
-  // final output: reversed string
-
-  // split string into array
-  // initialize reversedString
-  // if the input string list's length is 0
-    // return list;
-  // if input string list's length > 0
-    // pop from string, push to reversedString
-    // return reversedString.concat(reverse(stringList));
   let list = string.split('');
   let reversedString = [];
   if (list.length === 0) {
@@ -182,7 +153,7 @@ var reverse = function(string) {
   if (list.length > 0) {
     reversedString.push(list.pop());
     let newInput = list.join('');
-    reversedString.push(reverse(newInput)); // reversedString = ['c'].concat(reverse('ab')), reversedString = ['b'].concat(reverse('a')), reversedString = ['a'].concat(reverse(''))
+    reversedString.push(reverse(newInput));
     return reversedString.join('');
   }
 };
