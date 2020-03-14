@@ -202,6 +202,19 @@ var gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  if (str1.length === 0 && str2.length === 0) {
+    return true;
+  }
+  let array1 = str1.split('');
+  let array2 = str2.split('');
+  let char1 = array1.shift();
+  let char2 = array2.shift();
+  if (char1 !== char2) {
+    return false;
+  }
+  if (char1 === char2) {
+    return true && compareStr(array1.join(''), array2.join(''));
+  }
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
@@ -271,10 +284,6 @@ var fibonacci = function(n) {
 // nthFibo(7); // 13
 // nthFibo(3); // 2
 var nthFibo = function(n) {
-  // return (n < 1) ? null
-  // : (n === 0) ? n
-  // : (n === 1) ? n
-  // : nthFibo(n - 2) + nthFibo(n - 1);
   if (n < 0) {
     return null;
   }
